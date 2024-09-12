@@ -1,46 +1,75 @@
 import tkinter as tk
 from tkinter import ttk
+from Function.UploadAccountFile import upload_file
 
-# 메인 화면 생성
+# create main
 root = tk.Tk()
-root.title("WhPlus Ver.1")
+root.title("WhTraffic Ver.1")
+root.geometry('500x300')
 
-# 노트북 생성
+# create notebook
 notebook = ttk.Notebook(root)
 
-# 노트북 탭 생성
-tab1 = ttk.Frame(notebook)
-tab2 = ttk.Frame(notebook)
-tab3 = ttk.Frame(notebook)
+# create tab
+continue_tab = ttk.Frame(notebook)
+pump_tab = ttk.Frame(notebook)
+set_tab = ttk.Frame(notebook)
 
-# 프레임을 노트북에 씌움
-notebook.add(tab1, text="유지용")
-notebook.add(tab2, text="펌핑용")
-notebook.add(tab3, text="설정")
+# frame notebook
+notebook.add(continue_tab, text="Continuing")
+notebook.add(pump_tab, text="Pump")
+notebook.add(set_tab, text="Setting")
 
-# 노트북 위젯을 패킹
+# packing notebook
 notebook.pack(expand=True, fill='both')
 
-# 탭1에 컨텐츠 추가
-label1 = tk.Label(tab1, text="This is Tab 1")
-label1.pack(pady=20, padx=20)
+# add content in continue_tab
+continue_start_lbl = tk.Label(continue_tab, text="시작")
+continue_start_lbl.grid(column=0, row=0)
+continue_start_btn = tk.Button(continue_tab, text="Start")
+continue_start_btn.grid(column=1, row=0)
 
-button1 = tk.Button(tab1, text="Button in Tab 1")
-button1.pack(pady=20)
+continue_stop_lbl = tk.Label(continue_tab, text="중지")
+continue_stop_lbl.grid(column=0, row=2)
+continue_stop_btn = tk.Button(continue_tab, text="Stop")
+continue_stop_btn.grid(column=1, row=2)
 
-# 탭2에 컨텐츠 추가
-label2 = tk.Label(tab2, text="This is Tab 2")
-label2.pack(pady=20, padx=20)
+continue_exit_lbl = tk.Label(continue_tab, text="초기화")
+continue_exit_lbl.grid(column=0, row=4)
+continue_exit_btn = tk.Button(continue_tab, text="Exit")
+continue_exit_btn.grid(column=1, row=4)
 
-entry2 = tk.Entry(tab2)
-entry2.pack(pady=20)
+# add content in pump_tab
+pump_start_lbl = tk.Label(pump_tab, text="시작")
+pump_start_lbl.grid(column=0, row=0)
+punp_start_btn = tk.Button(pump_tab, text="Start")
+punp_start_btn.grid(column=1, row=0)
 
-# 탭3에 컨텐츠 추가
-label3 = tk.Label(tab3, text="This is Tab 3")
-label3.pack(pady=20, padx=20)
+pump_stop_lbl = tk.Label(pump_tab, text="중지")
+pump_stop_lbl.grid(column=0, row=2)
+pump_stop_btn = tk.Button(pump_tab, text="Stop")
+pump_stop_btn.grid(column=1, row=2)
 
-text_area3 = tk.Text(tab3, height=10, width=30)
-text_area3.pack(pady=20)
+pump_exit_lbl = tk.Label(pump_tab, text="초기화")
+pump_exit_lbl.grid(column=0, row=4)
+pump_exit_btn = tk.Button(pump_tab, text="Exit")
+pump_exit_btn.grid(column=1, row=4)
 
-# Run the application
+# add content in set_tab
+set_youtube_lbl = tk.Label(set_tab, text="유튜브 링크")
+set_youtube_lbl.grid(column=0, row=1)
+
+set_youtube_input = tk.Entry(set_tab, width=50)
+set_youtube_input.grid(column=1, row=1)
+
+set_youtube_confirm_btn = tk.Button(set_tab, text="확인")
+set_youtube_confirm_btn.grid(column=3, row=1)
+set_youtube_modify_btn = tk.Button(set_tab, text="수정")
+set_youtube_modify_btn.grid(column=5, row=1)
+
+# 업로드 버튼
+set_account_upload_btn = tk.Button(set_tab, text="텍스트 파일 업로드", command=upload_file)
+set_account_upload_btn.grid(column=0, row=2)
+
+# run the application
 root.mainloop()
