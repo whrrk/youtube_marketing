@@ -1,20 +1,20 @@
 from tkinter import filedialog
-from tkinter import messagebox
+from Parser.ParsingAccount import ParsingAccount
+import tkinter as tk
+from multiprocessing import shared_memory
+import numpy as np
 
+file_path = None
 def upload_file():
-    # 파일 다이얼로그로 파일 선택
-    file_path = filedialog.askopenfilename(
-        title="텍스트 파일을 선택하세요",
-        filetypes=(("Text Files", "*.txt"), ("All Files", "*.*"))
+    file_name = filedialog.askopenfilename(
+        title="CSV 파일을 선택하세요",
+        filetypes=(("Account Files", "*.csv"), ("All Files", "*.*"))
     )
-    
-    # 파일이 선택되었을 경우
-    if file_path:
-        try:
-            with open(file_path, 'r') as file:
-                content = file.read()  # 파일 내용 읽기
-                return content
-        except Exception as e:
-            messagebox.showerror("Error", f"파일을 읽는 중 오류가 발생했습니다: {str(e)}")
-    else:
-        messagebox.showwarning("Warning", "파일을 선택하지 않았습니다.")
+
+    global file_path
+    file_path = file_name
+
+    return file_path
+
+def get_file_path():
+    return file_path

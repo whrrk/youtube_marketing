@@ -21,11 +21,14 @@ login_wait = config['DEFAULT']['LoginWaitTime']
 youtube_wait = config['DEFAULT']['YoutubeWaitTime']
 # 유지시간
 duration = config['DEFAULT']['Duration']
+# 반복횟수
+repeat_count = config['DEFAULT']['Repeat']
 
 options = [app_name,
            version,
            login_wait,
            youtube_wait,
-           duration]
+           duration,
+           repeat_count]
 
 

@@ -68,8 +68,8 @@ set_youtube_modify_btn = tk.Button(set_tab, text="수정")
 set_youtube_modify_btn.grid(column=5, row=1)
 
 # 업로드 버튼
-set_account_upload_btn = tk.Button(set_tab, text="텍스트 파일 업로드", command=upload_file)
-set_account_upload_btn.grid(column=0, row=2)
+set_account_upload_btn = tk.Button(set_tab, text="구글 계정 파일 업로드", command=upload_file)
+set_account_upload_btn.grid(column=1, row=2)
 
 # run the application
 root.mainloop()
