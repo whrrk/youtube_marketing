@@ -1,8 +1,9 @@
 import tkinter as tk
 from tkinter import ttk
 from Function.UploadAccountFile import upload_file
+from Model.LoginModel import run
 
-# create main
+# create mains
 root = tk.Tk()
 root.title("WhTraffic Ver.1")
 root.geometry('500x300')
@@ -42,7 +43,7 @@ continue_exit_btn.grid(column=1, row=4)
 # add content in pump_tab
 pump_start_lbl = tk.Label(pump_tab, text="시작")
 pump_start_lbl.grid(column=0, row=0)
-punp_start_btn = tk.Button(pump_tab, text="Start")
+punp_start_btn = tk.Button(pump_tab, text="Start", command=run)
 punp_start_btn.grid(column=1, row=0)
 
 pump_stop_lbl = tk.Label(pump_tab, text="중지")
@@ -62,10 +63,10 @@ set_youtube_lbl.grid(column=0, row=1)
 set_youtube_input = tk.Entry(set_tab, width=50)
 set_youtube_input.grid(column=1, row=1)
 
-set_youtube_confirm_btn = tk.Button(set_tab, text="확인")
-set_youtube_confirm_btn.grid(column=3, row=1)
-set_youtube_modify_btn = tk.Button(set_tab, text="수정")
-set_youtube_modify_btn.grid(column=5, row=1)
+# set_youtube_confirm_btn = tk.Button(set_tab, text="확인")
+# set_youtube_confirm_btn.grid(column=3, row=1)
+# set_youtube_modify_btn = tk.Button(set_tab, text="수정")
+# set_youtube_modify_btn.grid(column=5, row=1)
 
 # 업로드 버튼
 set_account_upload_btn = tk.Button(set_tab, text="구글 계정 파일 업로드", command=upload_file)
