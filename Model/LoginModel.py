@@ -1,4 +1,5 @@
 import pandas as pd
+import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -7,9 +8,9 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import time
 
-upload_file_path = None
+upload_account_file_path = None
+upload_proxy_file_path = None
 
 def login_multiple_accounts_in_tabs(csv_file_path, login_url):
     # CSV 파일에서 이메일과 비밀번호 리스트 가져오기
@@ -65,8 +66,9 @@ def login_in_new_tab(driver,email, password, url):
     time.sleep(5)
 
 def run():
-    csv_file_path = upload_file_path  # CSV 파일 경로 지정
+    csv_account_file_path = upload_account_file_path  # CSV 파일 경로 지정
+    csv_proxy_file_path = upload_proxy_file_path
 
     login_url = "https://accounts.google.com/"  # 로그인하려는 사이트의 로그인 페이지 URL
 
-    login_multiple_accounts_in_tabs(csv_file_path, login_url)
+    login_multiple_accounts_in_tabs(csv_account_file_path,csv_proxy_file_path,login_url)
