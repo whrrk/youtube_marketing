@@ -1,11 +1,8 @@
-from Function.ProxyAndDriverSetting import driver
 import time
-
 from selenium.webdriver.common.by import By
-from Main import set_youtube_input
+from Function.ProxyAndDriverSetting import driver
 
 # 유튜브 영상 URL로 이동
-driver.get(set_youtube_input)
 time.sleep(5)  # 페이지 로딩 대기
 
 # (옵션) 영상이 자동으로 재생되지 않으면 플레이 버튼 클릭

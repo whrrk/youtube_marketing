@@ -87,7 +87,7 @@ class Traffic:
 
         root.mainloop()
 
-def runrun(cls):
+def main_run(cls):
     cls.display()
 
-runrun(Traffic)
+main_run(Traffic)
