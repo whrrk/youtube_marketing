@@ -6,6 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from Function.ProxyAndDriverSetting import get_driver
 from tkinter import messagebox
+from Model.MainModel import traffic_run
 
 upload_account_file_path = None
 upload_proxy_file_path = None
@@ -56,6 +57,8 @@ def login_in_new_browser(email, password, url):
     password_input.send_keys(Keys.RETURN)
     
     time.sleep(5)
+
+    traffic_run(driver)
 
 def run():
     csv_account_file_path = upload_account_file_path  # CSV 파일 경로 지정

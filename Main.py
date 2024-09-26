@@ -58,18 +58,6 @@ class Traffic:
         pump_exit_btn = tk.Button(pump_tab, text="Exit")
         pump_exit_btn.grid(column=1, row=4)
 
-        # add content in set_tab
-        set_youtube_lbl = tk.Label(set_tab, text="유튜브 링크")
-        set_youtube_lbl.grid(column=0, row=1)
-
-        set_youtube_input = tk.Entry(set_tab, width=50)
-        set_youtube_input.grid(column=1, row=1)
-
-        # set_youtube_confirm_btn = tk.Button(set_tab, text="확인")
-        # set_youtube_confirm_btn.grid(column=3, row=1)
-        # set_youtube_modify_btn = tk.Button(set_tab, text="수정")
-        # set_youtube_modify_btn.grid(column=5, row=1)
-
         # 구글 계정 업로드 버튼
         account_file_label_text = tk.StringVar(value="업로드 파일 없음")
         account_file_label = tk.Label(set_tab,textvariable=account_file_label_text)
